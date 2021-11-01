@@ -16,9 +16,15 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
 
-    let test = this.advanceDataTester.checkString("Divaynhui% Sah", ['space'] , 'Name' )
-    if(test != null){
-      this.$error = test;
+    let test1 = this.advanceDataTester.checkString("Divaynshu Sah", ['space', 'empty','specialChar','number'],"Name")
+
+    let test2 = this.advanceDataTester.checkStringArray([
+      {name: "Fname", value: "divaynshu"},
+      {value: ""},
+    ], ['space','empty'])
+
+    if(test2 != null){
+      this.$error = test2;
     }
     else{
       this.$error = "All Good!!";

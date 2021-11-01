@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {StringArray} from "./model/string-array";
 
 
 type test = 'empty'|'space'|'specialChar'|'number';
@@ -43,6 +44,24 @@ export class AdvanceDataTester{
     if ($error != "") return $error;
     else return;
   }
+
+  checkStringArray(text: StringArray[], testCases?: test[]){
+    let $error: string|undefined;
+
+    if(!testCases)
+      testCases = ['empty','space','specialChar','number']
+
+     for (let i=0; i<text.length; i++){
+      $error = this.checkString(text[i].value, testCases, text[i].name);
+      if($error != undefined) return $error;
+    }
+
+    if ($error != "") return $error;
+    else return;
+
+  }
+
+
 
 
 }
