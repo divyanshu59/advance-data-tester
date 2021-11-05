@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {StringArray} from "./model/string-array";
+import {SortFilter} from "../interface/sort-filter";
+import {StringArray} from "../interface/string-array";
 
 
 type test = 'empty'|'space'|'specialChar'|'number';
@@ -63,5 +64,20 @@ export class AdvanceDataTester{
 
 
 
+
+  multiSort(data: any[], filter: SortFilter[]){
+    for (let i = 0; i < filter.length; i++) {
+      let filterKey = filter[i].key;
+      let filterValues = filter[i].value;
+      let isInclude = filter[i].isInclude;
+
+      data = data.filter( ele => {
+          // @ts-ignore
+          return filterValues.includes(ele[filterKey]) == isInclude
+        }
+      );
+    }
+    return data;
+  }
 
 }
