@@ -1,9 +1,25 @@
 {
   "name": "advance-data-tester",
-  "version": "0.0.1",
+  "version": "1.0.7",
+  "description": "A Simple library to check and filter data and their values.",
   "peerDependencies": {
-    "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0"
+    "@angular/common": "~10.0.0",
+    "@angular/core": "~10.0.0"
+  },
+  "homepage": "https://github.com/divyanshu59/advance-data-tester#readme",
+  "repository": {
+    "url": "https://github.com/divyanshu59/advance-data-tester",
+    "type": "git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/divyanshu59/advance-data-tester/issues",
+    "email": "divaynshusah@bilwg.com"
+  },
+  "author": {
+    "url": "https://github.com/divyanshu59",
+    "name": "Divyanshu Sah",
+    "email": "divaynshusah@bilwg.com"
   },
   "dependencies": {
     "tslib": "^2.3.0"

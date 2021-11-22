@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AdvanceDataTester} from "advance-data-tester";
+import {AdvanceDataTester} from "../../projects/advance-data-tester/src/lib/advance-data-tester.service";
+
+
+
+
 
 
 @Component({
@@ -89,7 +93,7 @@ export class AppComponent implements OnInit{
           "endDay": "2022-01-15T00:00:00.000Z"
         },
         "_id": "616fcb96eb5f661f0345999a",
-        "name": "ABC University",
+        "name": "ABCdsf University",
         "logo": "https://bravome.s3.amazonaws.com/b206fc8f-aad8-4e88-ac30-c01052fd86d6.png",
         "instituteAdmin": "61754a237604831a26e2cc4a",
         "token": 40700,
@@ -131,7 +135,7 @@ export class AppComponent implements OnInit{
           "endDay": "2022-01-15T00:00:00.000Z"
         },
         "_id": "616fcb96eb5f661f0345999a",
-        "name": "ABC University",
+        "name": "ABCvcvcv University",
         "logo": "https://bravome.s3.amazonaws.com/b206fc8f-aad8-4e88-ac30-c01052fd86d6.png",
         "instituteAdmin": "61754a237604831a26e2cc4a",
         "token": 40700,
@@ -269,7 +273,7 @@ export class AppComponent implements OnInit{
           "endDay": "2022-01-15T00:00:00.000Z"
         },
         "_id": "616fcb96eb5f661f0345999a",
-        "name": "ABC University",
+        "name": "ABCaaa University",
         "logo": "https://bravome.s3.amazonaws.com/b206fc8f-aad8-4e88-ac30-c01052fd86d6.png",
         "instituteAdmin": "61754a237604831a26e2cc4a",
         "token": 40700,
@@ -485,12 +489,8 @@ export class AppComponent implements OnInit{
 
     let finalData = this.advanceDataTester.multiSort(this.data, [
       {
-        key: 'gender',
-        value: ['Male'],
-        isInclude: true
-      },{
-        key: 'userType',
-        value: ['Student'],
+        key: 'instituteId.name',
+        value: ['ABC University'],
         isInclude: true
       }
     ]);

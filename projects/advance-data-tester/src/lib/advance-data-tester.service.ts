@@ -66,16 +66,30 @@ export class AdvanceDataTester{
 
 
   multiSort(data: any[], filter: SortFilter[]){
+
     for (let i = 0; i < filter.length; i++) {
       let filterKey = filter[i].key;
       let filterValues = filter[i].value;
-      let isInclude = filter[i].isInclude;
+      let isInclude = filter[i].isInclude || true;
 
-      data = data.filter( ele => {
-          // @ts-ignore
-          return filterValues.includes(ele[filterKey]) == isInclude
-        }
-      );
+      let array = filterKey.split('.');
+
+      if (array.length > 1) {
+        data = data.filter(ele => {
+          let temp = ele;
+          for (let j = 0; j <  array.length; j++) {
+            temp = temp[array[j]]
+          }
+            // @ts-ignore
+            return filterValues.includes(temp) == isInclude
+          }
+        );
+      } else
+        data = data.filter(ele => {
+            // @ts-ignore
+            return filterValues.includes(ele[filterKey]) == isInclude
+          }
+        );
     }
     return data;
   }
